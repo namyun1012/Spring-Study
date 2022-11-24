@@ -1,5 +1,5 @@
 package chap08;
 
-public class WrongIdPasswordException extends Exception {
+public class WrongIdPasswordException extends RuntimeException {
 
 }

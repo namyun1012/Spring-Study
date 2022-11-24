@@ -12,11 +12,15 @@ public class AppCtx {
 		public DataSource dataSource() {
 			DataSource ds = new DataSource();
 			ds.setDriverClassName("com.mysql.jdbc.Driver");
-			ds.setUrl("jdbc:mysql//localhost/spring5fs?characterEncoding=utf8");
+			ds.setUrl("jdbc:mysql://localhost/spring5fs?useSSL=false&characterEncoding=utf8");
+			//mysql 이 update 되면서 SSL을 사용해서 사용 안한다고 해줘야 함
 			ds.setUsername("spring5");
 			ds.setPassword("spring5");
 			ds.setInitialSize(2);
 			ds.setInitialSize(10);
+			ds.setTestWhileIdle(true);;
+			ds.setMinEvictableIdleTimeMillis(60000 * 3);
+			ds.setTimeBetweenEvictionRunsMillis(10 * 1000);
 			return ds;
 		}
 		

@@ -59,7 +59,7 @@ public class Member {
 		this.registerDateTime = registerDateTime;
 	}
 	
-	public void changePassword(String oldPassword, String newPassword) throws WrongIdPasswordException {
+	public void changePassword(String oldPassword, String newPassword) {
 		if(!password.equals(oldPassword))
 			throw new WrongIdPasswordException();
 		this.password = newPassword;
