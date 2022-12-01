@@ -7,10 +7,9 @@ import chap09.HelloController;
 
 @Configuration
 public class ControllerConfig {
-
+	
 	@Bean
 	public HelloController helloController() {
 		return new HelloController();
 	}
-
 }
